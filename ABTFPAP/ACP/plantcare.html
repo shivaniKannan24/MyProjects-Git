@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Care Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add custom styles here */
+        body {
+            padding-top: 60px; /* Adjust based on your navbar height */
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .plant-container {
+            margin-top: 20px;
+        }
+        .plant-card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Plants Care Page</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container plant-container">
+        <h1>Welcome to Plants Care Page</h1>
+        <div class="row">
+            <!-- Plant Cards -->
+            <div class="col-md-4">
+                <div class="card plant-card">
+                    <img src="https://images.pexels.com/photos/3696170/pexels-photo-3696170.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Plant Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Organic Fertilizer</h5>
+                        <p class="card-text">These are derived from natural sources, including plant or animal matter, and often contain a variety of nutrients. Examples include compost, manure, bone meal, seaweed, and fish emulsion. Organic fertilizers help improve soil structure and microbial activity while providing nutrients to plants in a slow-release manner.</p>
+                        <a href="of.html" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card plant-card">
+                    <img src="https://media.istockphoto.com/id/1284379612/photo/indian-farmer-spreading-fertilizer-in-the-green-banana-field.jpg?b=1&s=612x612&w=0&k=20&c=CTm1HpvQs9PNHfP9YKpbV1ipQU6I8fwfxQX7AFyTlpw=" class="card-img-top" alt="Plant Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Chemical Fertilizer</h5>
+                        <p class="card-text">Also known as synthetic or inorganic fertilizers, these are manufactured using chemical processes. They typically contain specific concentrations of essential nutrients like nitrogen, phosphorus, and potassium (N-P-K) in various forms that are easily absorbed by plants. Examples include ammonium nitrate, urea, and superphosphate. Chemical fertilizers deliver nutrients quickly to plants but may have the potential to cause environmental concerns like nutrient runoff.</p>
+                        <a href="cf.html" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card plant-card">
+                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQyDl-q5BUZiVnJ4Pc_aPzRgchzIZq4QTMTxMR0I5yaUlImOIqj" class="card-img-top" alt="Plant Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Mineral or Natural Fertilizers</h5>
+                        <p class="card-text">These are derived from naturally occurring mineral sources and are less processed than chemical fertilizers. Examples include rock phosphate, greensand, and limestone. These fertilizers contain minerals and nutrients necessary for plant growth, and their release may occur slowly over time.</p>
+                        <a href="monf.html" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript (Optional, only if needed for certain Bootstrap components or interactions) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
