@@ -1,0 +1,31 @@
+async function predictWeather() {
+  const location = document.getElementById('locationInput').value; // Assuming input field has an id 'locationInput'
+  const url = 'API_URL'; // Replace 'API_URL' with the actual API endpoint
+  const API_KEY = 'YOUR_API_KEY'; // Replace 'YOUR_API_KEY' with your actual API key
+
+  const query = { q: location };
+  const headers = {
+    'X-RapidAPI-Key': API_KEY,
+    'X-RapidAPI-Host': 'API_HOST', // Replace 'API_HOST' with the actual API host
+  };
+
+  const queryString = new URLSearchParams(query).toString();
+  const requestUrl = `${url}?${queryString}`;
+
+  try {
+    const response = await fetch(requestUrl, { headers });
+    const jsonData = await response.json();
+
+    const name = jsonData.location.name;
+    const region = jsonData.location.region;
+    // Extract other necessary weather data here...
+
+    // Assuming you want to update HTML elements with the retrieved data
+    document.getElementById('name').textContent = name;
+    document.getElementById('region').textContent = region;
+    // Update other HTML elements with the respective weather data
+
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}

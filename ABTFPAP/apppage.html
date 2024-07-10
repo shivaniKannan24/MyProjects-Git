@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Ai tool</title>
+    <style>
+        /* Custom Styles */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: url("https://media.istockphoto.com/id/1181366400/photo/in-the-hands-of-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-on.jpg?b=1&s=612x612&w=0&k=20&c=FiJ1Y22CEv7fgiQSR6zvYpo9wDe_upE6FS5d7vYKXUI=") no-repeat center center fixed;
+            background-size: cover;
+            padding-top: 20px;
+        }
+        .navbar {
+            background-color: #ffffff;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .nav-link {
+            color: #000000;
+            font-weight: bold;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            display: none; /* Initially hide all images */
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .content {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+    <script>
+        // Function to display the corresponding image when the link is clicked
+        function showImage(imageId) {
+            // Hide all images
+            var images = document.querySelectorAll('img');
+            images.forEach(function(image) {
+                image.style.display = 'none';
+            });
+
+            // Display the clicked image
+            var clickedImage = document.getElementById(imageId);
+            clickedImage.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ai Tool</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="live weather/index.html" onclick="showImage('liveWeatherImage')">Live Weather</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PDP/disease.html" onclick="showImage('diseaseDetectionImage')">Plant Disease Detection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ACP/plantcare.html" onclick="showImage('plantCareImage')">Plant Care Page</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid content">
+        <img id="liveWeatherImage" src="https://media.istockphoto.com/id/1196653292/photo/3d-weather-forecast-icons.jpg?b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=X6Zb7X_YoQTgViyO3v9njpxvBz1XlaKhM-YDgHGiGBg=" alt="Live weather">
+        <img id="diseaseDetectionImage" src="PDP/pexels-photo-2974409.jpeg" alt="Plant Disease Detection">
+        <img id="plantCareImage" src="https://images.pexels.com/photos/1002703/pexels-photo-1002703.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Plant Care Page">
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Weather Forecast</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image:url('ab8aa7caf0eb3356135e9eb1b897b3c1.gif');
+            /* background-size:; */
+            background-color: green;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid white;
+        }
+
+        .card-header {
+            background-color: black;
+            color:white;
+            border: 1px solid white;
+            /* border-radius: 15px 15px 0 0; */
+
+        }
+
+        #weather-info {
+            background-color:black;
+            color: green;
+            margin-top: 20px;
+            border-radius: 20px;
+            border: 2px solid white;
+        }
+
+        #weather-icon {
+            width: 50px;
+            height: 50px;
+        }
+        #irrigate{
+            background-color: black;
+            color: green;
+            font-size: 20px;
+            padding: 15px;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+        #t{
+            color: black;
+        }
+        #result{
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: green;
+        } 
+        .button {
+      /* Your custom styles */
+      background-color: black;
+      color: green;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: 1px solid white;
+      cursor: pointer;
+    }
+
+    /* Adjusting button on hover */
+    .button:hover {
+        color: white;
+      background-color: green;
+    }
+    .btn{
+        background-color: black;
+        color: green;
+    }
+    .btn:hover{
+        color: white;
+        background-color: green;
+    }
+   .form-control{
+       font-size: 20px;
+       color: rgba(0, 0, 0, 0.589);
+    }
+    #locationInput{
+        color: black;
+        border: 1px solid green;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <h3>Live Weather Forecast</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="weatherForm">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="locationInput" placeholder="Enter City Name">
+                                <button type="submit" class="btn">Get Weather</button>
+                            </div>
+                        </form>
+                        <div id="weather-info" class="d-none">
+                            <h4 id="location"></h4>
+                            <img id="weather-icon" src="" alt="Weather Icon">
+                            <p id="temperature"></p>
+                            <p id="condition"></p>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <div id="irrigate">
+                    <br>
+                    <div >
+                        <label for="t">Enter the Current Temperature</label>
+                        <input  id= "t" type="text"  placeholder="in celcius">
+                        <button type="submit" class="button" onclick="convert()">Can I irrigate Plants?</button>
+                        <br>
+                    </div><br>
+                    <div id="result">
+        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const weatherForm = document.getElementById('weatherForm');
+        weatherForm.addEventListener('submit', getWeather);
+
+        function getWeather(e) {
+            e.preventDefault();
+            const locationInput = document.getElementById('locationInput').value;
+            fetchWeatherData(locationInput);
+        }
+
+        async function fetchWeatherData(location) {
+            const API_KEY = 'f665628641msh9930d4b1427bb07p1c6a6fjsn2963333182d5'; // Replace with your actual RapidAPI key
+            const API_URL = `https://weatherapi-com.p.rapidapi.com/current.json?q=${location}`;
+
+            const headers = {
+                'X-RapidAPI-Key': API_KEY,
+                'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+            };
+
+            try {
+                const response = await fetch(API_URL, { headers });
+                const data = await response.json();
+                console.log(data);
+                displayWeather(data);
+            } catch (error) {
+                console.error('Error fetching weather:', error);
+            }
+        }
+
+        function displayWeather(data) {
+            const location = document.getElementById('location');
+            const temperature = document.getElementById('temperature');
+            const weatherIcon = document.getElementById('weather-icon');
+            const condition = document.getElementById('condition');
+            const weatherInfo = document.getElementById('weather-info');
+
+            location.textContent = data.location.name;
+            temperature.textContent = `Temperature: ${data.current.temp_c}°C`;
+            weatherIcon.src = data.current.condition.icon;
+            condition.textContent = `Weather: ${data.current.condition.text}`;
+
+            weatherInfo.classList.remove('d-none');
+        }
+        function convert(){
+            let temp = Number(document.getElementById("t").value)
+            if( temp  < 30.0 ){
+                const result = document.getElementById("result")
+                result.innerHTML = "Don't irrigate your plants!"
+            }
+            else{
+                const result = document.getElementById("result")
+                result.innerHTML= "You can irrigate your plants!"
+            }
+
+      }
+    </script>
+</body>
+
+</html>
