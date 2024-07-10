@@ -41,29 +41,6 @@ Our Plant Care page offers comprehensive information on various fertilizers to e
 Content Area:
 Contains a series of <img> elements, each associated with a different section. These images are initially hidden.
 
-html
-
-<nav class="navbar navbar-expand-lg navbar-light">
-    ...
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="live weather/index.html" onclick="showImage('liveWeatherImage')">Live Weather</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="PDP/disease.html" onclick="showImage('diseaseDetectionImage')">Plant Disease Detection</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="ACP/plantcare.html" onclick="showImage('plantCareImage')">Plant Care Page</a>
-        </li>
-    </ul>
-    ...
-</nav>
-
-<div class="container-fluid content">
-    <img id="liveWeatherImage" src="..." alt="Live weather">
-    <img id="diseaseDetectionImage" src="..." alt="Plant Disease Detection">
-    <img id="plantCareImage" src="..." alt="Plant Care Page">
-</div>
 
 3. CSS Styling:
 
