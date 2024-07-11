@@ -2,7 +2,7 @@ AI TOOL FOR DETECTING AGRICULTURAL PROBLEMS
 
 Our AI Tool for Predicting Agricultural Problems  page integrates advanced solutions to support effective farming.
 It offers three key features: Live Weather, Plant Disease Detection, and Plant Care. 
-Users can navigate to each page by clicking the corresponding option. 
+Users can navigate to each page by clicking the corresponding option.
 The Live Weather page provides real-time weather updates and irrigation advice based on current conditions. 
 The Plant Disease Detection page allows users to upload images of affected leaves and select observed symptoms to identify diseases and receive treatment recommendations. 
 The Plant Care page offers detailed information on chemical, organic, and mineral & natural fertilizers, 
